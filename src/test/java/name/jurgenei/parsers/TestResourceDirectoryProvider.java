@@ -1,4 +1,4 @@
-package name.jurgenei.parsers.antlr;
+package name.jurgenei.parsers;
 
 import java.io.File;
 import java.nio.file.*;
