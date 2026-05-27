@@ -17,6 +17,22 @@ This repository packages the ANTLR v4 grammar (`ANTLRv4Lexer.g4` / `ANTLRv4Parse
 - sample inputs: `src/test/resources/antlr4`
 - dynamic-loading parser test: `src/test/java/name/jurgenei/parsers/G4LexerParserTest.java`
 
+## Latest Insights (May 2026)
+
+- XML AST conversion now supports bounded execution profiles through `executionModel` + `parallelism`
+  - `SEQUENTIAL`
+  - `PLATFORM_THREADS`
+  - `VIRTUAL_THREADS`
+- per-file DFA clearing is automatic in both success/failure paths, keeping memory bounded for large `.g4` corpora
+- per-file conversion output includes runtime metadata (`<file> <duration>s <lines>:<bytes> parsed`)
+- end-of-run summary now provides operational and performance signals:
+  - files processed / files with errors / success percentage
+  - estimated sequential time
+  - total processing time
+  - average time per file
+  - execution profile with speedup factor
+- fail-fast validation is enforced for invalid task inputs (for example blank `startRule`, invalid `executionModel`, non-positive `parallelism`)
+
 ## Build model
 
 This project uses:
